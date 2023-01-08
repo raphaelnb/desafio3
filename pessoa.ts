@@ -1,5 +1,5 @@
 class Pessoa {
-    _cpf: String 
-    nome: String
-    telefone: String
+    _cpf: string 
+    _nome: string
+    _telefone: string
 }
