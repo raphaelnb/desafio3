@@ -1,4 +1,4 @@
-class Cliente {
+class Cliente extends Pessoa {
     private _vip: boolean;
 
     listarEnderecos() {

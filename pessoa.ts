@@ -1,5 +1,5 @@
 class Pessoa {
-    _cpf: string 
-    _nome: string
-    _telefone: string
+    private _cpf: string 
+    private _nome: string
+    private _telefone: string
 }
