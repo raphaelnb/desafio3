@@ -1,13 +1,28 @@
 import { Conta } from "./conta.js";
-import { Credito } from "./credito";
 
 class contaCorrente extends Conta {
     private _limite: number;
 
-    calcularSaldo(credito: number, debito: number, _limite: number) {
-        //let saldo = this.debito.filter()
-        //const saldo: number = (Credito - Sacar) + this._limite;
-        return saldo;
+    transferir(contaDestino: Conta, valor: number) {
+        if (valor <= this._limite) {
+            this.sacar(valor, new Date);
+            contaDestino.depositar(valor, new Date);
+        } else {
+            console.log("saldo indisponível");
+        }
+    } 
 
+    calcularSaldo(credito: number, debito: number, _limite: number) {
+        let saldo: any;
+
+        for (let i = 0; i <= this.credito.length; i++) {
+            saldo += this.credito[i]._valor;
+        }
+
+        for (let i = 0; i <= this.debito.length; i++) {
+            saldo += this.debito[i]._valor;
+        }
+
+        return saldo + _limite;
     }
 }

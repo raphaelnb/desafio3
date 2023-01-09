@@ -1,5 +1,5 @@
 export class Sacar {
-    private _valor: number;
+    _valor: number;
     private _data: Date;
 
     constructor(valor: number, data: Date) {
