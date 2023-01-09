@@ -7,7 +7,7 @@ export class Conta {
     credito: Array<Credito> = [];
     debito: Array<Sacar> = [];
 
-    get
+    
     
     depositar(valor: number, data: Date) {
         let deposito = new Credito(valor, data);
