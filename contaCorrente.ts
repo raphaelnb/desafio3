@@ -20,7 +20,7 @@ class contaCorrente extends Conta {
         }
 
         for (let i = 0; i <= this.debito.length; i++) {
-            saldo += this.debito[i].valor;
+            saldo -= this.debito[i].valor;
         }
 
         return saldo + _limite;
