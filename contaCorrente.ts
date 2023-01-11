@@ -15,6 +15,7 @@ export class ContaCorrente extends Conta {
         if (valor <= this._limite) {
             this.sacar(valor, new Date);
             contaDestino.depositar(valor, new Date);
+            console.log("transferencia realizada!")
         } else {
             console.log("saldo indisponível");
         }

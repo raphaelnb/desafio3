@@ -1,27 +1,19 @@
 import { Conta } from "./conta.js";
-
 export class ContaPoupanca extends Conta {
-    private _rentabilidadeMensal: number;
-
-    public get rentabilidadeMensal(): number {
+    get rentabilidadeMensal() {
         return this._rentabilidadeMensal;
     }
-
-    public set rentabilidadeMensal(taxa: number) {
+    set rentabilidadeMensal(taxa) {
         this._rentabilidadeMensal = taxa;
     }
-
     calcularRendimento() {
-        let saldo: any;
+        let saldo;
         for (let i = 0; i <= this.credito.length; i++) {
             saldo += this.credito[i];
         }
-
         let rentabilidade = saldo * 1.15;
         return rentabilidade;
     }
-
     calcularSaldo() {
-        
     }
 }
