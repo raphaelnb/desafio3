@@ -1,7 +1,8 @@
 import { Endereco } from "./endereco.js";
+import { IUsuario } from "./iUsuario.js";
 import { Pessoa } from "./pessoa.js";
 
-export class Cliente extends Pessoa {
+export class Cliente extends Pessoa implements IUsuario {
     private _vip: boolean;
     private _endereco: Endereco;
     private _listaDeEnderecos: Array<Endereco> = [];
@@ -14,6 +15,10 @@ export class Cliente extends Pessoa {
         ) {
         super(cpf, nome, telefone);
         this._vip = vip;
+    }
+    
+    autenticar(): boolean {
+        return true;
     }
 
     public get vip(): boolean {

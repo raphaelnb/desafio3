@@ -1,7 +1,8 @@
 import { Pessoa } from "./pessoa.js";
 import { Cargo } from "./cargo.js"
+import { IUsuario } from "./iUsuario.js"
 
-export class Funcionario extends Pessoa {
+export class Funcionario extends Pessoa implements IUsuario{
     private _salario: number;
     private _cargo: Cargo
 
@@ -15,6 +16,10 @@ export class Funcionario extends Pessoa {
         super(cpf, nome, telefone);
         this._salario = salario;
         this._cargo = cargo;
+    }
+
+    autenticar(): boolean {
+        return true;
     }
 
     public get salario(): number {
@@ -32,4 +37,5 @@ export class Funcionario extends Pessoa {
     public set cargo(cargo: Cargo) {
         this._cargo;
     }
+
 }
