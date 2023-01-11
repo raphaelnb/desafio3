@@ -14,14 +14,26 @@ export class ContaPoupanca extends Conta {
     calcularRendimento() {
         let saldo: any;
         for (let i = 0; i <= this.credito.length; i++) {
-            saldo += this.credito[i];
+            saldo += this.credito[i] * this.rentabilidadeMensal;
         }
 
-        let rentabilidade = saldo * 1.15;
+        let rentabilidade = saldo * this.rentabilidadeMensal;
         return rentabilidade;
     }
 
     calcularSaldo() {
-        
+        let saldo: number = 0;
+
+        for (let i = 0; i <= this.credito.length; i++) {
+            saldo = saldo + this.credito[i];
+        }
+
+        for (let i = 0; i <= this.debito.length; i++) {
+            saldo = saldo - this.debito[i];
+        }
+
+        let rentabilidade = saldo * this.rentabilidadeMensal;
+        //return saldo * this.rentabilidadeMensal;
+        console.log(rentabilidade);
     }
 }
