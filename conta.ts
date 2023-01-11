@@ -1,15 +1,18 @@
 import { Credito } from "./credito.js"
 import { Sacar } from "./sacar.js"
+import { Cliente } from "./cliente.js"
 
-export class Conta {
+export abstract class Conta {
     private _numero: string;
-    private _limite: number;
-    credito: Array<Credito> = [];
-    debito: Array<Sacar> = [];
+    private _cliente: Cliente;
+   //private _limite: number;
+    credito: Array<number> = [];
+    debito: Array<number> = [];
 
-    constructor(numero: string) {
+    constructor(numero: string, cliente: Cliente) {
         this._numero = numero;
-    }
+        this._cliente = cliente;
+    } 
 
     public get numero(): string {
         return this._numero;
@@ -21,16 +24,16 @@ export class Conta {
     
     depositar(valor: number, data: Date) {
         let deposito = new Credito(valor, data);
-        this.credito.push(deposito);
+        this.credito.push(valor);
     }
 
     sacar(valor: number, data: Date) {
-        if (valor <= this._limite) {
+        /*if (valor <= this._limite) {*/
             let saque = new Sacar(valor, data);
-            this.debito.push(saque);
-        } else {
+            this.debito.push(valor);
+        /*} else {
             console.log("Saldo indisponível");
-        }
+        }*/
     }
     
 }
